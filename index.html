@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VirtualList</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="top">
+      <h1>VirtualList</h1>
+      <p id="perf" class="perf"></p>
+    </header>
+    <div class="controls">
+      <label class="field grow"><span>Search</span><input id="query" type="search" placeholder="Name, email, city or note" autocomplete="off"></label>
+      <label class="field"><span>Rows</span>
+        <select id="size">
+          <option value="10000">10,000</option>
+          <option value="50000">50,000</option>
+          <option value="100000" selected>100,000</option>
+          <option value="500000">500,000</option>
+        </select>
+      </label>
+      <form id="jump-form" class="field"><span>Jump to row</span><input id="jump" type="number" min="1" placeholder="e.g. 42000"></form>
+      <label class="check"><input id="variable" type="checkbox"> Variable heights</label>
+    </div>
+    <p id="stats" class="stats" aria-live="polite"></p>
+    <div id="list" class="list" aria-label="Records"></div>
+    <p id="empty" class="empty" hidden>No rows match your search.</p>
+    <p class="hint">Click the list and use the arrow keys, Page Up/Down, Home and End.</p>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
